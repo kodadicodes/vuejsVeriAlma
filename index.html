@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <label for="name">İsim: </label>
+      <input type="text" v-model="name"/><!-- 1. ADIM: `v-model`, Vue.js'te iki yönlü veri bağlaması sağlayan bir direktiftir, form elemanları ile kullanılarak kullanıcının girdiğini Vue bileşenindeki veriyle senkronize etmeyi kolaylaştırır.-->
+      <P>{{name}}</P>
+      <label for="age">Yaş: </label>
+      <input type="text" v-model="age">
+      <P>{{age}}</P><!-- 3. ADIM: Kullanıcının girdiği değeri Vue içerisinden alıp HTMLe yazdırır-->
+
+      <script>
+        const { createApp } = Vue;
+        createApp({
+            data(){
+                return{
+                    name: "",//2. ADIM: Kulanıcın girdiği değeri buraya atar
+                    age: ""
+                }
+            },
+          methods: {
+
+          },
+        }).mount("#app");
+      </script>
+    </div>
+  </body>
+</html>
